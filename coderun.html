@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Code Editor</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    textarea { width: 30%; height: 200px; margin: 10px; }
+    iframe { width: 95%; height: 300px; border: 1px solid #ccc; background: white; }
+    #run { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+  <h2>Edit and Run Your Code</h2>
+
+  <label>HTML</label><br>
+  <textarea id="htmlCode">&lt;p&gt;This product is awesome&lt;/p&gt;
+&lt;button&gt;Buy&lt;/button&gt;</textarea>
+
+  <label>CSS</label><br>
+  <textarea id="cssCode">p { color: green; }</textarea>
+
+  <label>JavaScript</label><br>
+  <textarea id="jsCode">console.log("Button ready!");</textarea>
+
+  <br><button id="run">Run Code</button>
+
+  <h3>Output:</h3>
+  <iframe id="output"></iframe>
+
+  <script>
+    document.getElementById("run").onclick = function() {
+      const html = document.getElementById("htmlCode").value;
+      const css = "<style>" + document.getElementById("cssCode").value + "</style>";
+      const js = "<script>" + document.getElementById("jsCode").value + "<\/script>";
+
+      const code = html + css + js;
+      const output = document.getElementById("output");
+      output.srcdoc = code;
+    };
+  </script>
+
+</body>
+</html>
