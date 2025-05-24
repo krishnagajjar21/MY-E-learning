@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn HTML | RK</title>
+  <link rel="stylesheet" href="html.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="RK-LOGO.png" width="100px" height="70px" /></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="section-item">The Core Web Technology</h1>
+    <h4 class="section-item">HTML (HyperText Markup Language) is the standard language for creating web pages.</h4><br>
+    <h2>1. Basic Structure</h2>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+    <img src="img1-removebg-preview.png" alt="removed" width="300px"><br>
+    <p><li>Every code you're ever visited is built with <strong>HTML code.</strong></li></p>
+    <p><li>With this courses you'll be able to <strong>build your own web page.</strong></li></p>
+    <p><li>HTML code is based on tags.</li></p> <br>
+    <div class="d1">
+      <pre><code>&lt;button&gt;</code></pre>
+    </div>
+
+    <p><li>Tages use angle brackets <b>&lt;&gt;</b> Complete the button like this.</li></p>
+    <pre><code>&lt;/button&gt;</code></pre> <br>
+    <h2>We have to use <strong>&lt;&gt;</strong> for our tags.</h2>
+<br>
+    <p><li>The angle brackets <b> &lt;&gt;</b> surround the name of the element you want to add to the page.
+      Elements like buttons,  </li></p>
+        <p style="margin-left: 20px;">text and images are added to web pages with different tags.</p>
+   <p> <li>We have to use <b>&lt;</b> at the start of our tag and close the tag with <b>&gt;</b>.</li></p>
+  
+    <p><li>For creating a valid button tag we use <b>&lt;button&gt;</b>.</li></p>
+<br>
+<h2>Let's add the image togather.</h2><br>
+    <p><li>You can use the <b>image tag (&lt;img&gt;)</b> to add images to a web page</li></p>
+    <p style="margin-left: 21px;">Also for the image tag we can use <b>&lt;img&gt;</b> tag.</p>
+    <p><li>All we have to do is start with <b>&lt;</b> and add the tag name, then close with <b>&gt;</b>.</li></p>
+<br>
+    <h2>You need HTML tags to add different elements to a page.</h2>
+    <br>
+    <h3>Like this:</h3><br>
+    <p><b style="color: #08566e;">Button:</b> &lt;button&gt;</p>
+    <p><b style="color: #08566e;">Image:</b> &lt;img&gt;</p>
+    <p><b style="color: #08566e;">Paragraph:</b> &lt;p&gt;</p>
+    <p><b style="color: #08566e;">Table:</b> &lt;table&gt;</p>
+<br>
+    <h2>HTML will allow you to:</h2><br>
+    
+      <li>Create websites</li>
+      <li>Work more effectively with technical teams</li>
+      <li>Improve digital marketing skills</li>
+    
+<br>
+    <img src="img2.png" alt="removed" style="float: left;" height="200px" width="200px"><br><br>
+    <p>What will you see HTML for? Click on the comments to share your <br> thoughts and connect with your fellow learners.</p><br><br>
+<br><br><br>
+    <img src="img3-removebg-preview.png" alt="removed" height="250px" width="500px">
+    <p><li>The structure of a web page is built in <b>HTML</b>.</li></p>
+    <p><li>You can then style the page with <b>CSS</b>.</li></p>
+    <p><li><b>JavaScript</b> is used to make pages <b>interactive</b>.</li></p>
+<br>
+    <p><b>It's like:</b></p>
+    <br>
+      <li><b>Structure:</b> HTML</li>
+      <li><b>Style:</b> CSS</li>
+      <li><b>Interactivity:</b> JavaScript</li>
+    
+<br>
+    <h1>Lesson Takeaways</h1>
+    <p>Great work! You learned that:</p><br>
+    <p>⭐ <b>HTML</b> code controls the structure of a web page.</p>
+    <p>⭐ <b>HTML tags</b> are used to add elements to a web page.</p>
+    <p>⭐ Some examples of <b>HTML tags</b> are <b>&lt;button&gt;, &lt;img&gt;, &lt;table&gt;</b> and <b>&lt;p&gt;</b></p>
+<br>
+    <img src="img2.png" alt="removed" style="float: left;" height="200px" width="200px"><br><br>
+    <p>In the next lesson you'll start writing, running, and testing real code in the code playground.</p>
+    
+    <br><br>
+    <div class="section-item">
+      <a href="courses.html" class="btn">&lt; Back to Courses</a>
+      <a href="htmlpage2.html" class="hp2">Next Lesson &gt;</a>
+    </div>
+  </main>
+
+  <script>
+    // Add intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.section-item').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

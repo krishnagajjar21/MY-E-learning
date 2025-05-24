@@ -1,0 +1,83 @@
+<!-- HTML: css.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn CSS</title>
+  <link rel="stylesheet" href="CSS-RK.css">
+</head>
+<body>
+ <header>
+    <div class="logo"><img src="RK-LOGO.png" width="100px" height="70px" style="border-radius: 15px"/></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <h1>Learn CSS</h1>
+    <p>CSS (Cascading Style Sheets) is used to style HTML elements.</p>
+    
+        <img src="img-css1 (1).png" width="290px" height="220px"alt="removed" width="300px">
+        <img src="img-css2.png" class="cssimg2" width="300px" height="210px"alt="removed" width="300px">
+        <br>
+        <p><b>⭐ CSS</b>  is used to style the elements in a web page.</p>
+        <p>⭐ CSS is a styling language that works togather with <b>HTML</b> to give a page its look & Layout.</p>
+        <br>
+        
+    
+    <h2>Example:</h2>
+    <p>⭐ If you want to add css to your page,you have to use <b>&lt;style&gt;</b> tag.</p>
+        <p>⭐ You can use CSS properties to cutomize the visual presentatiion of &HTML elements.</p>
+
+     <h2>Write CSS Code Below:</h2><br>
+  <textarea id="htmlInput-css1">
+&lt;p ______ = "color :grey"&gt;CONGRATULATIONS !! You have changed style color using the STYLE tag&lt;/p&gt;
+
+  </textarea>
+
+  <h2>Output:</h2>
+  <iframe id="preview-css1"></iframe>
+<br>
+<h1>MAIN Menu</h1>
+<p> The <b>color property</b> is used to control the color of the text.</p><p>Code a blue heading.</p>
+<br> <h2>Write CSS Code Below:</h2><br>
+<textarea id="htmlInput-css2">
+&lt;h1 style = "____  :blue"&gt;MAIN Menu&lt;/h1&gt;
+
+</textarea>
+
+<h2>Output:</h2>
+<iframe id="preview-css2"></iframe>
+
+<a href="courses.html" class="btn">< Back to Courses</a>       <a href="" class="hp2">Next Lesson ></a> 
+  </main>
+  <script>
+    function setupLivePreview(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+
+    function update() {
+      const html = input.value;
+      const doc = preview.contentDocument || preview.contentWindow.document;
+      doc.open();
+      doc.write(html);
+      doc.close();
+    }
+
+    input.addEventListener("input", update);
+    window.addEventListener("load", update);
+  }
+
+  // Call for both sets
+  setupLivePreview("htmlInput-css1", "preview-css1");
+  setupLivePreview("htmlInput-css2", "preview-css2");
+  </script>
+</body>
+</html>

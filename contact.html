@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | RK</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="RK-LOGO.png" width="100px" height="70px" /></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html" class="active">Contact us</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Connect with our Team</h2>
+    <p>💡 Have any questions or feedback? We'd like to hear from you!</p>
+
+    <!-- Updated Form with Email Functionality -->
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdkgvjev" method="POST">
+      <input type="text" name="name" placeholder="Enter your full name" required>
+      <input type="email" name="_replyto" placeholder="Enter your Email" required>
+      <textarea name="message" rows="5" placeholder="Enter your message" required></textarea>
+      <input type="hidden" name="_subject" value="New Message from RK Website">
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div id="form-status"></div>
+
+    <div class="contact-info">
+      <p>Email: E-LEARNING@RK.com | Phone: +91-123******0</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 RK. All rights reserved.
+  </footer>
+
+  <script>
+    // Form Submission Handling
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading state
+      formStatus.style.display = 'block';
+      formStatus.textContent = 'Sending message...';
+      formStatus.style.color = '#08566e';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully! ✅';
+          form.reset();
+          setTimeout(() => {
+            formStatus.style.display = 'none';
+          }, 3000);
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (error) {
+        formStatus.textContent = 'Error sending message. Please try again. ❌';
+        formStatus.style.color = '#ff4444';
+      }
+    });
+
+    // Real-time Email Validation
+    const emailInput = document.querySelector('input[type="email"]');
+    emailInput.addEventListener('input', () => {
+      if (!validateEmail(emailInput.value)) {
+        emailInput.setCustomValidity('Please enter a valid email address');
+      } else {
+        emailInput.setCustomValidity('');
+      }
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>
